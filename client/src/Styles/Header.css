@@ -1,0 +1,9 @@
+.nav{
+    display: flex;
+}
+.nav a{
+    text-decoration: none;
+    display: inline;
+    font-size: large;
+    margin: 2% 3%;
+}
