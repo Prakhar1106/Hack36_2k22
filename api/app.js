@@ -83,7 +83,7 @@ app.post("/predict_locality",  (req, res) => {
   const y=req.body.lat;
   let spawn = require("child_process").spawn;
 
-  let process = spawn("py", ["../predict_locality.py", lat, long]);
+  let process = spawn("py", ["../predict_locality.py", x, y]);
 
   process.stdout.on("data", (data) => {
     let d = data.toString();

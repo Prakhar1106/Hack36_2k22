@@ -5,7 +5,7 @@ const Home = ({user}) => {
         <div>
             <h3>Welcome, {user.user.name}</h3>
 
-            <SafeZone />
+            <SafeZone user={user}/>
         </div>
         
     );

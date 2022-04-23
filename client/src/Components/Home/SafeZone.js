@@ -3,8 +3,9 @@ import ReactSpeedometer from 'react-d3-speedometer'
 import "../../Styles/SafeZone.css"
 import { useState } from 'react';
 import Api from '../../utils/Api';
-const SafeZone = () => {
-    const [level, setLevel] = useState(542);
+//import User from '../../../../api/models/User';
+const SafeZone = ({user}) => {
+    const [level, setLevel] = useState(0);
     var lat = "";
     var long = "";
     const getCoordinates = (position) => {
@@ -14,11 +15,26 @@ const SafeZone = () => {
             lat: position.coords.latitude,
             long: position.coords.longitude
         };
+        var g = (user.user.gender === 'Male') ? 0 : (user.user.gender === 'Female') ? 1 : 0;
           const config = { headers: { "Content-Type": "application/json" } };
           Api.post("/predict_locality", body, config)
             .then((response) => {
               
               console.log("locality: ", response);
+              const body = {
+                locality_name: response.data.locality_name,
+                gender: g
+                };
+              const config = { headers: { "Content-Type": "application/json" } };
+              Api.post("/predict", body, config)
+                .then((res) => {
+                    setLevel(parseInt(parseFloat(res.data))*100)
+                    console.log(parseInt(parseFloat(res.data)));
+                })
+                .catch(() => {
+                    // swal('Intalid Credentials', '', 'error')
+                    console.log("Invalid Credentials in predict!!");
+                  });
             })
             .catch(() => {
               // swal('Invalid Credentials', '', 'error')
@@ -62,7 +78,7 @@ const SafeZone = () => {
                 width={400}
                 needleHeightRatio={0.7}
                 value={level}
-                currentValueText="Safty Level"
+                currentValueText="Crime Level"
                 customSegmentLabels={[
                 {
                     text: 'Very Bad',
