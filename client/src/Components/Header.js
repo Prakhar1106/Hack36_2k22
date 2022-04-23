@@ -1,15 +1,16 @@
 import Login from "./login.js"
 import "../Styles/Header.css"
-const Header = ({setUser, setVisible}) => {
+const Header = ({setUser, setVisible, setAdmin, setStatus}) => {
     
     return(
         <div id="home" class="header">
             <div class="nav">
                 <a href="#home">Home</a>
                 <a href="#about">About Us</a>
-                <a href="#" onClick = {(e) => setVisible(true)}>Sign Up</a>
+                <a href="#" onClick = {(e) => setVisible(true)}>User Sign Up</a>
+                <a href="#" onClick = {(e) => setAdmin(true)}>Admin Sign Up</a>
                 <a href="">Contact Us</a>
-                <Login setUser={setUser}/>
+                <Login setUser={setUser} setStatus={setStatus}/>
             </div>
             <div class="down-header">
                 <div class="tag">
