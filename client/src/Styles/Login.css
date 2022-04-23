@@ -1,10 +1,10 @@
 #form.log-in-form {
     display: block;
     /* align-items: center; */
-    margin-left: 10%;
+    margin-left: 9%;
     justify-content: center;
     flex-direction: column;
-    padding: 0 3%;
+    padding: 0 1% 0 0;
     transition: all 0.2s 0.7s;
     overflow: hidden;
     grid-column: 1 / 2;
@@ -15,12 +15,12 @@
         max-width: 200px;
         width: 100%;
         background-color: #f0f0f0;
-        margin: 20px 10px;
-        height: 50%;
+        margin: 10px 10px;
+        height: 60%;
         border-radius: 55px;
         display: inline-flex;
         grid-template-columns: 15% 85%;
-        padding: 0 0.4rem;
+        padding: 0 0.2rem;
         position: relative;
     }
 
@@ -32,8 +32,8 @@
   
   #form.log-in-form .input-field i {
     text-align: center;
-    line-height: 40px;
-    padding: 0.3% 3%;
+    line-height: 45px;
+    padding: 1% 3%;
     color: #acacac;
     transition: 0.5s;
     font-size: 1.1rem;
@@ -44,7 +44,7 @@
     outline: none;
     border: none;
     width: 80%;
-    line-height: 1;
+    line-height: 0.5;
     font-weight: 400;
     font-size: 1rem;
     color: #333;
@@ -60,7 +60,7 @@
     background-color: #5995fd;
     border: none;
     outline: none;
-    height: 50%;
+    height: 65%;
     border-radius: 49px;
     color: #fff;
     text-transform: uppercase;

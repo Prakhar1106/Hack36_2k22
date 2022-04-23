@@ -5,6 +5,9 @@ const Header = ({setUser, setVisible, setAdmin, setStatus}) => {
     return(
         <div id="home" class="header">
             <div class="nav">
+                
+                <img src="logo.png" width="15%" height="25%" />
+                
                 <a href="#home">Home</a>
                 <a href="#about">About Us</a>
                 <a href="#" onClick = {(e) => setVisible(true)}>User Sign Up</a>
@@ -14,16 +17,17 @@ const Header = ({setUser, setVisible, setAdmin, setStatus}) => {
             </div>
             <div class="down-header">
                 <div class="tag">
-                    <h2 style={{color: "red"}}>Find</h2>
-                    <h2>Your Safe Zone!!</h2>
+                    
+                    <h2>Are You Travelling to a </h2>
+                    <h2 style={{color: "red"}}>Safe Zone?</h2>
                 </div>
                 <div class="display-img">
-                    {/* <img src="crime.png" width="60%" height="50%"/> */}
+                    <img src="crime.png" width="110%" height="100%"/>
                 </div>
             </div>
             <div id="about" class="about">
-                <div class="about-img">
-                    <img src="about.png" width="60%" height="50%"/>
+                <div class="about-img" style={{alignContent: 'center'}}>
+                    <img src="about.png" width="70%" height="50%"/>
                 </div>
                 <div class="about-content">
                     <h1>About</h1>
