@@ -26,7 +26,7 @@ const LocalityData = ({user}) => {
         </div>
         if(locaity=="Katra"){
             <img
-            
+
         }
         </>
         
