@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Map from './Map';
 import "../Styles/Header.css"
 
 const HomeAdmin = ({user}) => {
@@ -40,21 +41,14 @@ const HomeAdmin = ({user}) => {
             <input type="radio" name="locality" value="Teliarganj" onChange={handleLocality} /> Teliarganj <br />
             <input type="radio" name="locality" value="Bank Road"  onChange={handleLocality} /> Bank Road <br />
         </div>
-<<<<<<< HEAD
-      
-||||||| 7e96d8b
-        if(locaity=="Katra"){
-            <img
-
-        }
-=======
         <div>
             <img src={crimeType} />
             <img src={crimeTime} />
         </div>
->>>>>>> e56d9e0b601c51c5a2c6c2d54f7a83bf6c845f06
+        <div>
+            <Map />
+        </div>
         </>
-        
     );
 }
 export default HomeAdmin
