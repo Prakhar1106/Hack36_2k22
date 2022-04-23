@@ -34,12 +34,12 @@ const localitySchema = new mongoose.Schema(
     { timestamps: true }
   );
 
-  const Locality = mongoose.model("localities", localitySchema);
+  const localities = mongoose.model("localities", localitySchema);
 
   const createDocument = async() => {
       try {
-          const l1= new Locality({
-              location_name: 'Teliarganj',
+          const l1= new localities({
+              locality_name: 'Teliarganj',
               population_density: 8960,
               avg_age: 25,
               avg_income: 10000,
@@ -47,8 +47,8 @@ const localitySchema = new mongoose.Schema(
               patroling: 5,
               morality_level: 6
           })
-          const l2= new Locality({
-            location_name: 'Civil Lines',
+          const l2= new localities({
+            locality_name: 'Civil Lines',
             population_density: 24738,
             avg_age: 30,
             avg_income: 15015,
@@ -56,8 +56,8 @@ const localitySchema = new mongoose.Schema(
             patroling: 3,
             morality_level: 7
         })
-          const l3= new Locality({
-            location_name: 'Sangam',
+          const l3= new localities({
+            locality_name: 'Sangam',
             population_density: 9582,
             avg_age: 27,
             avg_income: 7000,
@@ -65,8 +65,8 @@ const localitySchema = new mongoose.Schema(
             patroling: 2,
             morality_level: 3
         })
-        const l4= new Locality({
-            location_name: 'Bank Road',
+        const l4= new localities({
+            locality_name: 'Bank Road',
             population_density: 9548,
             avg_age: 25,
             avg_income: 9004,
@@ -74,8 +74,8 @@ const localitySchema = new mongoose.Schema(
             patroling: 2,
             morality_level: 4
         })
-        const l5= new Locality({
-            location_name: 'Katra',
+        const l5= new localities({
+            locality_name: 'Katra',
             population_density: 16157,
             avg_age: 35,
             avg_income: 11021,
@@ -83,8 +83,8 @@ const localitySchema = new mongoose.Schema(
             patroling: 3,
             morality_level: 6
         })
-        const l6= new Locality({
-            location_name: 'Prayagraj Junction',
+        const l6= new localities({
+            locality_name: 'Prayagraj Junction',
             population_density: 16458,
             avg_age: 34,
             avg_income: 19865,
@@ -92,8 +92,8 @@ const localitySchema = new mongoose.Schema(
             patroling: 2,
             morality_level: 6
         })
-        const l7= new Locality({
-            location_name: 'Prayag Junction',
+        const l7= new localities({
+            locality_name: 'Prayag Junction',
             population_density: 2546,
             avg_age: 29,
             avg_income: 6200,
@@ -101,8 +101,8 @@ const localitySchema = new mongoose.Schema(
             patroling: 0,
             morality_level: 6
         })
-        const l8= new Locality({
-            location_name: 'Govindpur',
+        const l8= new localities({
+            locality_name: 'Govindpur',
             population_density: 12452,
             avg_age: 25,
             avg_income: 25000,
@@ -110,8 +110,8 @@ const localitySchema = new mongoose.Schema(
             patroling: 3,
             morality_level: 7
         })
-        const l9= new Locality({
-            location_name: 'Rambagh',
+        const l9= new localities({
+            locality_name: 'Rambagh',
             population_density: 19254,
             avg_age: 36,
             avg_income: 16040,
@@ -119,8 +119,8 @@ const localitySchema = new mongoose.Schema(
             patroling: 1,
             morality_level: 7
         })
-        const l10= new Locality({
-            location_name: 'Chowk',
+        const l10= new localities({
+            locality_name: 'Chowk',
             population_density: 10005,
             avg_age: 35,
             avg_income: 30000,
@@ -128,8 +128,8 @@ const localitySchema = new mongoose.Schema(
             patroling: 4,
             morality_level: 8
         })
-        const l11= new Locality({
-            location_name: 'Jhunsi',
+        const l11= new localities({
+            locality_name: 'Jhunsi',
             population_density: 9784,
             avg_age: 26,
             avg_income: 12010,
@@ -137,8 +137,8 @@ const localitySchema = new mongoose.Schema(
             patroling: 0,
             morality_level: 4
         })
-        const l12= new Locality({
-            location_name: 'Jhalwa',
+        const l12= new localities({
+            locality_name: 'Jhalwa',
             population_density: 16548,
             avg_age: 29,
             avg_income: 13511,
@@ -146,8 +146,8 @@ const localitySchema = new mongoose.Schema(
             patroling: 1,
             morality_level: 4
         })
-        const l13= new Locality({
-            location_name: 'Allahpur',
+        const l13= new localities({
+            locality_name: 'Allahpur',
             population_density: 11454,
             avg_age: 31,
             avg_income: 18945,
@@ -155,8 +155,8 @@ const localitySchema = new mongoose.Schema(
             patroling: 5,
             morality_level: 5
         })
-        const l14= new Locality({
-            location_name: 'Tagore Town',
+        const l14= new localities({
+            locality_name: 'Tagore Town',
             population_density: 8245,
             avg_age: 25,
             avg_income: 5041,
@@ -164,8 +164,8 @@ const localitySchema = new mongoose.Schema(
             patroling: 0,
             morality_level: 2
         })
-        const l15= new Locality({
-            location_name: 'Daraganj',
+        const l15= new localities({
+            locality_name: 'Daraganj',
             population_density: 7814,
             avg_age: 29,
             avg_income: 7845,
@@ -173,8 +173,8 @@ const localitySchema = new mongoose.Schema(
             patroling: 0,
             morality_level: 3
         })
-        const l16= new Locality({
-            location_name: 'Chungi',
+        const l16= new localities({
+            locality_name: 'Chungi',
             population_density: 6014,
             avg_age: 38,
             avg_income: 15011,
@@ -182,8 +182,8 @@ const localitySchema = new mongoose.Schema(
             patroling: 0,
             morality_level: 4
         })
-        const l17= new Locality({
-            location_name: 'Cantonment',
+        const l17= new localities({
+            locality_name: 'Cantonment',
             population_density: 13547,
             avg_age: 27,
             avg_income: 32154,
@@ -191,8 +191,8 @@ const localitySchema = new mongoose.Schema(
             patroling: 2,
             morality_level: 9
         })
-        const l18= new Locality({
-            location_name: 'Khusrobagh',
+        const l18= new localities({
+            locality_name: 'Khusrobagh',
             population_density: 6845,
             avg_age: 30,
             avg_income: 4512,
@@ -201,8 +201,8 @@ const localitySchema = new mongoose.Schema(
             morality_level: 1
         })
 
-        const l19= new Locality({
-            location_name: 'Mumfordganj',
+        const l19= new localities({
+            locality_name: 'Mumfordganj',
             population_density: 17946,
             avg_age: 32,
             avg_income: 20120,
@@ -211,8 +211,8 @@ const localitySchema = new mongoose.Schema(
             morality_level: 6
         })
 
-        const l20= new Locality({
-            location_name: 'Police Line',
+        const l20= new localities({
+            locality_name: 'Police Line',
             population_density: 16714,
             avg_age: 35,
             avg_income: 35042,
@@ -229,7 +229,8 @@ const localitySchema = new mongoose.Schema(
       }
     }
 
+    //createDocument();
 // User.on('index', function(err) {
 //     if (err) console.log(err);
 //   });
-module.exports = Locality;
+module.exports = localities;
