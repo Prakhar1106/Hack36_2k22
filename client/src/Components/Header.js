@@ -1,5 +1,6 @@
 import Login from "./login.js"
 import "../Styles/Header.css"
+
 const Header = ({setUser}) => {
     return(
         <div class="header">
