@@ -6,6 +6,7 @@ var logger = require("morgan");
 const dotenv = require("dotenv");
 var cors = require("cors");
 const mongoose = require("mongoose");
+const localities = require('./models/Locality');
 
 dotenv.config({ path: "../.env" });
 
@@ -35,16 +36,22 @@ app.use(express.urlencoded({ extended: false }));
 //app.use(cookieParser);
 app.use(express.static(path.join(__dirname, "public")));
 
-app.post("/predict", (req, res) => {
+app.post("/predict", async (req, res) => {
   console.log("predict");
+  const locality_name1= req.body.locality_name;
+  const gender= req.body.gender;
+  const locality_info=  await localities.findOne({locality_name: locality_name1});
+
+  // console.log(locality_info);
+  
   let spawn = require("child_process").spawn;
-  let gender = 0;
-  let density = 10644;
-  let age = 35;
-  let income = 5600;
-  let policestationcount = 4;
-  let petrolingvans = 2;
-  let moralitylevel = 8;
+  const density = locality_info.population_density;
+  const age = locality_info.avg_age;
+  const income = locality_info.avg_income;
+  const policestationcount = locality_info.police_station_count;
+  const petrolingvans = locality_info.patroling;
+  const moralitylevel = locality_info.morality_level;
+
 
   var process = spawn("py", [
     "../predict_crimerate.py",
@@ -61,16 +68,18 @@ app.post("/predict", (req, res) => {
     let d = data.toString();
     console.log(d);
     var str = d.split("\r\n");
-    str.pop();
-    console.log(str);
+    var str1= str[0].slice(1,str[0].length-1);
+    //str.pop();
+    console.log(str1);
+    res.status(200).send(str1);
   });
 });
 
-app.post("/predict_locality", (req, res) => {
+app.post("/predict_locality",  (req, res) => {
+  console.log("IN PREDICT");
   //take co-ordinates from user/auto co-ordinates
-  let x = 85.762672;
-  let y = 25.768281;
-
+  const x=req.body.long;
+  const y=req.body.lat;
   let spawn = require("child_process").spawn;
 
   let process = spawn("py", ["../predict_locality.py", x, y]);
@@ -78,8 +87,15 @@ app.post("/predict_locality", (req, res) => {
   process.stdout.on("data", (data) => {
     let d = data.toString();
     console.log(d);
+    var str = d.split("\r\n");
+    var str1= str[0].slice(2,str[0].length-2);
+    //str1.pop();
+    console.log(str1);
+    res.status(200).send({'locality_name': str1});
   });
-});
+  
+  
+} );
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
