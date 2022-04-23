@@ -4,6 +4,7 @@ const localitySchema = new mongoose.Schema(
     {
       locality_name: {
         type: String,
+        unique: true,
         required: true
       },
       population_density: {
