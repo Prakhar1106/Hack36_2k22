@@ -1,25 +1,52 @@
 import {useRef} from "react"
 import API from "../utils/Api";
 import "../Styles/Login.css"
-const Login = ({setUser}) => {
+import swal from "sweetalert";
+const Login = ({setUser, setStatus}) => {
     const email = useRef(undefined);
     const password = useRef(undefined);
     const sendData = (e) => {
-      if (email.current.value === "") console.log("yes");
-      const body = {
-        email: email.current.value.trim(),
-        password: password.current.value,
-      };
-      const config = { headers: { "Content-Type": "application/json" } };
-      API.post("/users/login", body, config)
-        .then((response) => {
-          setUser(response.data);
-          console.log("Login success", response);
-        })
-        .catch(() => {
-          // swal('Invalid Credentials', '', 'error')
-          console.log("Invalid Credentials!!");
-        });
+      swal("Are you Admin?", {
+        buttons: ["No", "Yes"],
+      })
+      .then((val) => {
+        console.log(val);
+        if(val){
+          setStatus(true);
+          const body = {
+            email: email.current.value.trim(),
+            password: password.current.value,
+          };
+          const config = { headers: { "Content-Type": "application/json" } };
+          API.post("/admin/login", body, config)
+            .then((response) => {
+              setUser(response.data);
+              console.log("Login success", response);
+            })
+            .catch(() => {
+              // swal('Invalid Credentials', '', 'error')
+              console.log("Invalid Credentials!!");
+            });
+        }
+        else{
+          setStatus(false);
+          const body = {
+            email: email.current.value.trim(),
+            password: password.current.value,
+          };
+          const config = { headers: { "Content-Type": "application/json" } };
+          API.post("/users/login", body, config)
+            .then((response) => {
+              setUser(response.data);
+              console.log("Login success", response);
+            })
+            .catch(() => {
+              // swal('Invalid Credentials', '', 'error')
+              console.log("Invalid Credentials!!");
+            });
+        }
+      });
+      
     };
     return(
     

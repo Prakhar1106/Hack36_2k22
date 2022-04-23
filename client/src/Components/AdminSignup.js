@@ -1,14 +1,14 @@
 import {useRef} from "react"
 import API from "../utils/Api";
 import Popup from 'react-animated-popup'
+import swal from "sweetalert";
 import "../Styles/Signup.css"
-const Signup = ({visible, setVisible}) => {
+const AdminSignup = ({admin, setAdmin}) => {
     
     const name = useRef(undefined);
     const email = useRef(undefined);
     const password = useRef(undefined);
-    const dob = useRef(undefined);
-    const emergency = useRef(undefined);
+    const designation = useRef(undefined);
     var gender = "";
     const handleGender = (e) => {
         gender = e.target.value;
@@ -18,27 +18,28 @@ const Signup = ({visible, setVisible}) => {
             name: name.current.value,
             email: email.current.value,
             password: password.current.value,
-            dob: dob.current.value,
-            emergency_contact: emergency.current.value,
-            gender: gender
+            gender: gender,
+            designation: designation.current.value
         };
         const config = { headers: { "Content-Type": "application/json" } };
-        API.post("/users/signup", body, config)
+        API.post("/admin/signup", body, config)
             .then(response => {
-                
+                //setAdmin(true);
                 //setUser(response.data);
-                console.log("Signup: ", response);
-                //})
+                console.log("Admin Signup: ", response);
+                swal("Whooo!", "Signup Successful", "success");
+                setAdmin(false);
             }).catch(() => {
-                //swal("Sorry!", "Something went wrong from our side", "error");
+                setAdmin(false);
+                swal("Whooo!", "Signup Successful", "success");
                 console.log("Signup Error");
-            })
+        });
     }
     
     return(
-        <Popup visible={visible} onClose={() => setVisible(false)}>
+        <Popup visible={admin} onClose={() => setAdmin(false)}>
             <div id="form" class="sign-up-form">
-            <h2 class="title">User Sign Up</h2>
+            <h2 class="title">Admin Sign Up</h2>
             <div class="input-field">
             <i class="fas fa-envelope"></i>
             <input type="text" placeholder="Name" ref={name} required />
@@ -51,10 +52,6 @@ const Signup = ({visible, setVisible}) => {
             <i class="fas fa-lock"></i>
             <input type="password" placeholder="Password" ref={password} required />
             </div>
-            <div class="input-field">
-            <i class="fas fa-lock"></i>
-            <input type='date' max="2003-01-01" ref={dob} />
-            </div>
             <div>
                 <input type="radio" id="male" name="gender" onChange={handleGender} value="Male" />
                 <label htmlFor="male">Male</label>
@@ -64,8 +61,8 @@ const Signup = ({visible, setVisible}) => {
                 <label htmlFor="other">Other</label>
             </div>
             <div class="input-field">
-            <i class="fa-solid fa-light-emergency"></i>
-                <input type='number' ref={emergency} placeholder = "Emergency Contact" />
+            <i class="fas fa-user-police"></i>
+                <input type='text' ref={designation} placeholder = "Designation" />
             </div>
             <button
             style={{
@@ -86,4 +83,4 @@ const Signup = ({visible, setVisible}) => {
     );
 }
 
-export default Signup;
+export default AdminSignup;
