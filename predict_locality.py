@@ -7,6 +7,7 @@ clf1 = pickle.load(file1)
 file1.close()
 
 
+
 # Predicting locality name for new geo longitude, geo latitude
 # NEED LONGITUDE & LATITUDE FROM BACKEND HERE!!!!
 longitude = sys.argv[1]
