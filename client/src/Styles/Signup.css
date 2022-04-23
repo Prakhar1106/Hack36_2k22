@@ -1,9 +1,10 @@
-#form {
+.sign-up-form {
     display: inline-block;
-    /* align-items: center; */
+    align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 0 3%;
+    /* padding: 0 5%; */
+    margin: 0 20px;
     transition: all 0.2s 0.7s;
     overflow: hidden;
     grid-column: 1 / 2;
@@ -14,12 +15,13 @@
   .title {
     font-size: 2.2rem;
     color: #444;
+    align-items: center;
     margin-bottom: 10px;
   }
   
   #form.sign-up-form .input-field {
     max-width: 380px;
-    width: 100%;
+    width: 90%;
     background-color: #f0f0f0;
     margin: 10px 0;
     height: 55px;
@@ -55,6 +57,7 @@
 
   #form.sign-up-form .btn {
     width: 150px;
+    margin-left: 90px;
     background-color: #5995fd;
     border: none;
     outline: none;

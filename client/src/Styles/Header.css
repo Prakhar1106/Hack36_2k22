@@ -7,7 +7,36 @@
     font-size: large;
     margin: 2% 3%;
 }
-.header img{
-    display: block;
-    width: 40%;
+.header .down-header .display-img{
+    display: inline;
+    float: right;
+    background-color: aquamarine;
+    margin: 5% 5%; 
+    padding: 0;
+    width: 50%;
+    height: 250px;
+}
+.down-header{
+    display: flex;
+    padding-left: 5%;
+}
+.down-header .tag{
+    padding: 7% 3%;
+    font-size: 2rem;
+    line-height: 0.4;
+}
+
+.about .about-img{
+    display: inline;
+    float: left;
+    align-items: center;
+    /* background-color: rgb(219, 255, 127); */
+    margin: 3% 1%; 
+    margin-right: 3%;
+    padding: 0;
+    width: 60%;
+}
+
+.about-content{
+    padding: 3% 1%;
 }
