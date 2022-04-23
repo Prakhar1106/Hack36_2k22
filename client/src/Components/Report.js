@@ -1,14 +1,14 @@
-const Report = () => {
+import '../Styles/Report.css'
+const Report = ({item}) => {
     return(
-        <div style={{
-            width: '98%',
-            height: '100px',
-            padding: '1% 2%',
-            margin: '1%',
-            backgroundColor: 'rgb(82, 246, 153)'
-        }} 
+        <div 
         class="card">
-            <h4>Robbery</h4>
+              <h3>{item?.location}</h3>
+            <h5>{item?.crime_type}</h5>
+            {/* <h4>{item?.description}</h4> */}
+          
+            {/* <h4>{item?.reported_by}</h4> */}
+            <h5>{item?.status}</h5>
         </div>
     );
 }

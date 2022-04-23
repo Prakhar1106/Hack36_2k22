@@ -1,24 +1,28 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../Styles/Admin.css"
 import Api from "../utils/Api";
 import Report from "./Report";
 import Map from './Map';
-
 const HomeAdmin = ({ user, setUser }) => {
     const [crimeType, setCrimeType] = useState("");
     const [crimeTime, setCrimeTime] = useState("");
+    const [allcrimes, setAllCrimes] = useState(null);
     var locality = "";
-    const checkCrime = (e) => {
+    useEffect(() => {
+        
 
-        const config = { headers: { "Content-Type": "application/json" } };
-        Api.post("/crime/listcrimes", {}, config)
-            .then((response) => {
-                console.log("Crime Data", response);
-            })
-            .catch(() => {
-                console.log("Error!!!");
-            });
-    }
+            const config = { headers: { "Content-Type": "application/json" } };
+            Api.post("/crime/listcrimes", {}, config)
+                .then((response) => {
+                    console.log("Crime Data", response);
+                    setAllCrimes(response.data.allcrimes);
+                })
+                .catch(() => {
+                    console.log("Error!!!");
+                });
+        
+    }, []);
+    
     const handleLocality = (e) => {
         locality = e.target.value;
         console.log(locality);
@@ -44,6 +48,13 @@ const HomeAdmin = ({ user, setUser }) => {
         }
 
     }
+    const print = allcrimes?.map((item)=>{
+       
+        return (
+            <Report item={item}/>
+        )
+    })
+
     return(
         <>
             <nav>
@@ -57,7 +68,7 @@ const HomeAdmin = ({ user, setUser }) => {
                     <div class="localitydata">
                         <span>
                             <input type="radio" id="katra" name="locality" value="Katra" onChange={handleLocality} />
-                            <label htmlFor="Katra">Katra</label>
+                            <label htmlFor="katra">Katra</label>
                         </span>
                         <span>
                             <input type="radio" name="locality" id="civil" value="Civil Lines" onChange={handleLocality} />
@@ -79,10 +90,8 @@ const HomeAdmin = ({ user, setUser }) => {
                 <div class="reports">
                     <h1>FIRs</h1>
                     <div>
-                        <Report />
-                        <Report />
-                        <Report />
-                        <button onClick={(e) => checkCrime(e)}>click</button>
+                        {print}
+                        {/* <button class="btn" onClick={(e) => checkCrime(e)}>click to get</button> */}
                     </div>
                 </div>
         </div>

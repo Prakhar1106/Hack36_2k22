@@ -49,5 +49,19 @@ nav span{
 }
 
 .localitydata label:hover{
-    background-color: aquamarine;
+    background-color: rgb(117, 177, 202);
+    color: whitesmoke;
+}
+.btn{
+    margin: 0 2%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 2%;
+    margin-top: 5%;
+    border-radius: 10px;
+    border: 1.5px solid grey;
+}
+.btn:hover{
+    background-color: rgb(117, 177, 202);
+    color: whitesmoke;
 }
