@@ -43,7 +43,7 @@ const HomeAdmin = ({ user, setUser }) => {
         }
 
     }
-    return (
+    return(
         <>
             <nav>
                 <h2>{user.admin.name}</h2>
@@ -85,12 +85,12 @@ const HomeAdmin = ({ user, setUser }) => {
                     </div>
 
                 </div>
-
+        </div>
 
 
             </>
 
-            );
+        );
 };
 
-export default HomeAdmin
+export default HomeAdmin;
