@@ -1,4 +1,5 @@
 import {useRef} from "react"
+import API from "../utils/Api";
 import "../Styles/Signup.css"
 const Signup = () => {
     const name = useRef(undefined);
@@ -6,16 +7,32 @@ const Signup = () => {
     const password = useRef(undefined);
     const dob = useRef(undefined);
     const emergency = useRef(undefined);
-    const sendData = (e) => {
-        // if (email.current.value === "") console.log("yes");
-        // const body = {
-        // email: email.current.value.trim(),
-        // password: password.current.value,
-    };
     var gender = "";
     const handleGender = (e) => {
         gender = e.target.value;
     }
+    const sendData = (e) => {
+        const body = {
+            name: name.current.value,
+            email: email.current.value,
+            password: password.current.value,
+            dob: dob.current.value,
+            emergency_contact: emergency.current.value,
+            gender: gender
+        };
+        const config = { headers: { "Content-Type": "application/json" } };
+        API.post("/users/signup", body, config)
+            .then(response => {
+                
+                //setUser(response.data);
+                console.log("Signup: ", response);
+                //})
+            }).catch(() => {
+                //swal("Sorry!", "Something went wrong from our side", "error");
+                console.log("Signup Error");
+            })
+    }
+    
     return(
     
         <div id="form" class="sign-up-form">
