@@ -2,13 +2,12 @@ import sys
 import pickle
 import numpy as np
 
-print("hi")
+
 # Linear Regression
 file2 = open('../model2.pkl', 'rb') 
 m1 = pickle.load(file2)
 file2.close()
 
-print("hi2")
 
 # Decision Tree Regressor
 file3 = open('../model3.pkl', 'rb') 
