@@ -15,6 +15,7 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var adminRouter = require("./routes/admin");
 var localityRouter = require("./routes/locality");
+var crimeRouter = require("./routes/crime");
 
 var app = express();
 
@@ -106,6 +107,7 @@ app.post('/sendMessage', async (req,res)=>{
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/admin", adminRouter);
+app.use("/crime",crimeRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
