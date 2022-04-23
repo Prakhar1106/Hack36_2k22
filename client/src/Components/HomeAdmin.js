@@ -24,10 +24,7 @@ const LocalityData = ({user}) => {
             <input type="radio" name="locality" value="Teliarganj" onChange={handleLocality} /> Teliarganj <br />
             <input type="radio" name="locality" value="Bank Road"  onChange={handleLocality} /> Bank Road <br />
         </div>
-        if(locaity=="Katra"){
-            <img
-
-        }
+      
         </>
         
     );

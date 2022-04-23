@@ -1,6 +1,7 @@
 import "../Styles/Home.css";
 import SafeZone from "./Home/SafeZone";
 import Fir from "./Home/Fir";
+import Sos from "./Home/Sos";
 const Home = ({ user }) => {
   return (
     <div>
@@ -8,6 +9,7 @@ const Home = ({ user }) => {
 
       <SafeZone user={user} />
       <Fir />
+      <Sos user={user} />
     </div>
   );
 };
