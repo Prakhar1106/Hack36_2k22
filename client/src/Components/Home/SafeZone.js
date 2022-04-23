@@ -80,32 +80,33 @@ const SafeZone = ({user}) => {
                 value={level}
                 currentValueText="Crime Level"
                 customSegmentLabels={[
-                {
-                    text: 'Very Bad',
-                    position: 'INSIDE',
-                    color: '#555',
-                },
-                {
-                    text: 'Bad',
-                    position: 'INSIDE',
-                    color: '#555',
-                },
-                {
-                    text: 'Ok',
-                    position: 'INSIDE',
-                    color: '#555',
-                    fontSize: '19px',
-                },
-                {
-                    text: 'Good',
-                    position: 'INSIDE',
-                    color: '#555',
-                },
-                {
-                    text: 'Very Good',
-                    position: 'INSIDE',
-                    color: '#555',
-                },
+                    {
+                        text: 'Very Good',
+                        position: 'INSIDE',
+                        color: '#555',
+                    },
+                    {
+                        text: 'Good',
+                        position: 'INSIDE',
+                        color: '#555',
+                    },
+                    {
+                        text: 'Ok',
+                        position: 'INSIDE',
+                        color: '#555',
+                        fontSize: '19px',
+                    },
+                    {
+                        text: 'Bad',
+                        position: 'INSIDE',
+                        color: '#555',
+                    },
+                    {
+                        text: 'Very Bad',
+                        position: 'INSIDE',
+                        color: '#555',
+                    },
+                
                 ]}
                 ringWidth={47}
                 needleTransitionDuration={3333}

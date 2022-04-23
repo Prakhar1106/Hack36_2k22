@@ -31,7 +31,7 @@ const Fir = ({user}) => {
   return (
     // <Popup visible={visible} onClose={() => setVisible(false)}>
     <div id="form" class="sign-up-form">
-      <h2 class="title">Report A Crime</h2>
+      <h2 class="title">Report a Crime</h2>
       
       <div class="input-field">
         <i class="fas fa-envelope"></i>
@@ -58,6 +58,7 @@ const Fir = ({user}) => {
           backgroundColor: "#5995fd",
           fontWeight: "700",
           color: "white",
+          marginLeft: '18%',
           borderRadius: "49px",
         }}
         class="btn solid"

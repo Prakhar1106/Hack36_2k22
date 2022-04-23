@@ -10,7 +10,7 @@ const HomeAdmin = ({ user, setUser }) => {
     const checkCrime = (e) => {
 
         const config = { headers: { "Content-Type": "application/json" } };
-        Api.post("/crimes/listcrimes", {}, config)
+        Api.post("/crime/listcrimes", {}, config)
             .then((response) => {
                 console.log("Crime Data", response);
             })

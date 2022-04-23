@@ -1,0 +1,17 @@
+nav h3{
+    display: inline;
+}
+nav{
+    background-color: rgb(143, 143, 243);
+}
+.home{
+    display: flex;
+}
+.home .meter{
+    display: inline;
+    margin: 1% 4%;
+}
+
+.fir{
+    margin: 1% 4%;
+}

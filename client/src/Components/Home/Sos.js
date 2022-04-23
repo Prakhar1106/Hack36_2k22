@@ -19,18 +19,18 @@ const Sos = ({ user }) => {
   };
   return (
     <>
-      <button
+      <div
         style={{
-          backgroundColor: "#5995fd",
-          fontWeight: "700",
-          color: "white",
-          borderRadius: "49px",
+          // backgroundColor: "#5995fd",
+          // fontWeight: "700",
+          // color: "white",
+        
         }}
-        class="btn solid"
+        // class="btn solid"
         onClick={(e) => sendData(e)}
       >
         SOS
-      </button>
+      </div>
     </>
   );
 };
