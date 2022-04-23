@@ -1,0 +1,24 @@
+.outer-div{
+    padding: 5%;
+    display: block;
+}
+.outer-div div{
+    display: block;
+}
+
+.btn-refresh {
+    width: 120px;
+    background-color: #5995fd;
+    border: none;
+    outline: none;
+    height: 50%;
+    border-radius: 49px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px 10%;
+    padding: 1%;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+
