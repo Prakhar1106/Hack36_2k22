@@ -1,0 +1,53 @@
+.dashboard{
+    display: flex;
+    padding: 1%;
+}
+.dashboard h1{
+    font-size: 3rem;
+    margin: 1% 2%;
+}
+nav{
+    margin: 0;
+    padding: 1%;
+}
+nav h2{
+    display: inline;
+    color:blue;
+}
+nav span{
+    font-size: 1.1rem;
+    font-weight: 700;
+    float: right;
+    cursor: pointer;
+}
+.summary{
+    width: 75%;
+}
+.summary .chart{
+    max-width: 40%;
+}
+.reports{
+    width: 20%;
+}
+.reports div{
+    margin: 2%;
+}
+.localitydata{
+    padding: 2%;
+}
+.localitydata input{
+    display: none;
+    
+}
+.localitydata label{
+    margin: 0 2%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 1%;
+    border-radius: 15px;
+    border: 1.5px solid grey;
+}
+
+.localitydata label:hover{
+    background-color: aquamarine;
+}

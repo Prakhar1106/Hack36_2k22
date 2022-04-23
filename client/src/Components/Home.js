@@ -7,7 +7,7 @@ const Home = ({ user }) => {
       <h3>Welcome, {user.user.name}</h3>
 
       <SafeZone user={user} />
-      <Fir />
+      <Fir user={user}/>
     </div>
   );
 };
