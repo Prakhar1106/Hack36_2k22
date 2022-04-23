@@ -6,6 +6,7 @@ var logger = require("morgan");
 const dotenv = require("dotenv");
 var cors = require("cors");
 const mongoose = require("mongoose");
+const fast2sms = require('fast-two-sms');
 
 dotenv.config({ path: "../.env" });
 
@@ -46,7 +47,7 @@ app.post("/predict", (req, res) => {
   let petrolingvans = 2;
   let moralitylevel = 8;
 
-  var process = spawn("py", [
+  var process = spawn("python", [
     "../predict_crimerate.py",
     gender,
     density,
@@ -80,6 +81,11 @@ app.post("/predict_locality", (req, res) => {
     console.log(d);
   });
 });
+
+app.post('/sendMessage', async (req,res)=>{
+  const response = fast2sms.sendMessage({authorization : process.env.API_KEY, message : "I'm in danger! help!", numbers :[req.body.number]});
+  res.send(response);
+})
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
