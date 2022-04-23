@@ -9,14 +9,13 @@ const Fir = ({user}) => {
  
   const sendData = (e) => {
     const body = {
-      _id: user.user._id,
-      reported_by: user.user.name,
+      reported_by: user.user._id,
       crime_type: crime_type.current.value,
       location: location.current.value,
       description: description.current.value,
     };
     const config = { headers: { "Content-Type": "application/json" } };
-    API.post("/addcrime", body, config)
+    API.post("/crime/addcrime", body, config)
       .then((response) => {
         
         console.log("crime Added ", response);

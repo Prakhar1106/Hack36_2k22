@@ -110,3 +110,15 @@ module.exports.logout = async (req, res) => {
     });
     res.status(200).json({ status: "logout success!" });
   };
+
+  module.exports.userinfo = async (req,res) => {
+    const id= req.body.id;
+    const user = await User.find({_id: id});
+    if(user) {
+      res.status(201).json({user:user});
+    }
+    else
+    {
+      res.status(500).json({error: 'error'});
+    }
+  }

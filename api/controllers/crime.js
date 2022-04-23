@@ -32,7 +32,7 @@ module.exports.updatestatus = (req,res) => {
             }
             else
             {
-                res.status(400).json({result: 'status updated'});
+                res.status(201).json({result: 'status updated'});
             }
 
         })
@@ -42,7 +42,20 @@ module.exports.listcrimes = async (req,res) => {
     const allcrimes = await Crime.find({});
     if(allcrimes)
     {
-        res.status(400).json({allcrimes: allcrimes});
+        res.status(201).json({allcrimes: allcrimes});
+    }
+    else
+    {
+        res.status(404).json({error: "error"});
+    }
+}
+
+module.exports.crimesid = async (req,res) => {
+    const id = req.body.id;
+    const allcrimes = await Crime.find({reported_by: id});
+    if(allcrimes)
+    {
+        res.status(201).json({allcrimes: allcrimes});
     }
     else
     {
