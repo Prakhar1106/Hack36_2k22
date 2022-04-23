@@ -69,12 +69,12 @@ app.post("/predict", (req, res) => {
 
 app.post("/predict_locality", (req, res) => {
   //take co-ordinates from user/auto co-ordinates
-  let x = 85.762672;
-  let y = 25.768281;
-
+  // let x = //85.762672;
+  // let y = 25.768281;
+  const {lat, long} = req.body;
   let spawn = require("child_process").spawn;
 
-  let process = spawn("py", ["../predict_locality.py", x, y]);
+  let process = spawn("py", ["../predict_locality.py", lat, long]);
 
   process.stdout.on("data", (data) => {
     let d = data.toString();
