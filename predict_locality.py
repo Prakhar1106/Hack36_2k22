@@ -2,7 +2,7 @@ import sys
 import pickle
 import numpy as np
 
-file1 = open('./model1.pkl', 'rb')
+file1 = open('../model1.pkl', 'rb')
 clf1 = pickle.load(file1)
 file1.close()
 

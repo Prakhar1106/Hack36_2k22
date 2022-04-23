@@ -2,23 +2,26 @@ import sys
 import pickle
 import numpy as np
 
+print("hi")
 # Linear Regression
-file2 = open('./model2.pkl', 'rb') 
+file2 = open('../model2.pkl', 'rb') 
 m1 = pickle.load(file2)
 file2.close()
 
+print("hi2")
+
 # Decision Tree Regressor
-file3 = open('./model3.pkl', 'rb') 
+file3 = open('../model3.pkl', 'rb') 
 m2 = pickle.load(file3)
 file3.close()
 
 # Support Vector Regressor
-file4 = open('./model4.pkl', 'rb') 
+file4 = open('../model4.pkl', 'rb') 
 m3 = pickle.load(file4)
 file4.close()
 
 # Lasso Regressor
-file5 = open('./model5.pkl', 'rb') 
+file5 = open('../model5.pkl', 'rb') 
 m4 = pickle.load(file5)
 file5.close()
 
