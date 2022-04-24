@@ -20,12 +20,7 @@ const Sos = ({ user }) => {
   return (
     <>
       <div
-        style={{
-          // backgroundColor: "#5995fd",
-          // fontWeight: "700",
-          // color: "white",
-        
-        }}
+       
         // class="btn solid"
         onClick={(e) => sendData(e)}
       >

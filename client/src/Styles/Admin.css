@@ -12,7 +12,7 @@ nav{
 }
 nav h2{
     display: inline;
-    color:blue;
+    color:rgb(6, 6, 12);
 }
 nav span{
     font-size: 1.1rem;

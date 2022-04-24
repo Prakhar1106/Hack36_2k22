@@ -96,6 +96,7 @@ const HomeAdmin = ({ user, setUser }) => {
                 </div>
         </div>
         <div style={{width:'60%'}}>
+        <h1>Crime Hotspots</h1>
                     <Map />
                 </div>
             </>

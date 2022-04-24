@@ -8,8 +8,6 @@ const Home = ({ user }) => {
         <h3>Welcome, {user.user.name}</h3>
         
         <span>Logout</span>
-
-        <span style={{marginRight:"9px"}}><Sos user={user} /> </span>
         
       </nav>
     <div class="home">
@@ -21,6 +19,12 @@ const Home = ({ user }) => {
         <Fir />
       </div>
    </div>
+   <div class="sos">
+     <button class="btn">
+      <Sos user={user} />
+
+     </button>
+    </div>
    </>
   );
 };
