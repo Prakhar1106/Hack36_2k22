@@ -30,7 +30,7 @@ const print = FIR?.map((item)=>{
     <><nav>
         <h3>Welcome, {user.user.name}</h3>
         
-        <span>Logout</span>
+        <span onClick={()=>setUser(null)}>Logout</span>
         
       </nav>
     <div class="home">
@@ -42,6 +42,7 @@ const print = FIR?.map((item)=>{
         <Fir user={user}/>
       </div>
       <div class="fir">
+        <h1>Past Reports</h1>
         {print}
       </div>
    </div>

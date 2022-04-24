@@ -19,17 +19,7 @@ const Sos = ({ user }) => {
   return (
     <>
       <div
-<<<<<<< HEAD
-        style={{
-          backgroundColor: "#FF0000",
-          // fontWeight: "700",
-          color: "white",
-          padding: '5px 10px',
-          margin: '5px'
-        }}
-=======
        
->>>>>>> 178738064e54504225ad186ede992d01160b3ae4
         // class="btn solid"
         onClick={(e) => sendData(e)}
       >
