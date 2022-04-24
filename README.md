@@ -8,7 +8,32 @@
 
 
 ## Introduction:
-  
+### Problem Statement
+To prevent the crimes from happening, the police needs to identify the major areas which might be a potential crime hotspot.For better survelliance, they also need to know the statistics of any particular area.A lot of people travel but how would they know whether they're going to a safe place or not. What if a citizen just wants to report a crime online?
+
+### Solution
+'Safe Haven', a web application based on  Machine Learning Algorithms. 
+
+Based on user's current location, and some other factors related to the
+location, it predicts the crime rate of the area.
+
+#### Citizens can signup as Users to:
+
+                   1. Check the crime rate of the area they are in.
+
+                   2. Report any crime.
+
+                   3. Use the SOS feature in case of emergency. 
+
+#### Police personnels can use the platform to:
+
+                   1. See the crime hotspots of any particular area. 
+
+                   2. View the statistic such as the most prevalent crime types, peak crime     
+
+                        time etc.       
+
+                   3. View the reported crimes.  
   
 ## Demo Video Link:
   <a href="https://youtu.be/dQw4w9WgXcQ">https://youtu.be/dQw4w9WgXcQ</a>
