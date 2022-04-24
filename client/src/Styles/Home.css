@@ -3,7 +3,8 @@ nav h3{
 
 }
 nav{
-    background-color: rgb(143, 143, 243);
+    color: rgb(34, 34, 230);
+    font-size: 1.3rem;
 }
 .home{
     display: flex;

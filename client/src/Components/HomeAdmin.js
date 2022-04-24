@@ -9,9 +9,7 @@ const HomeAdmin = ({ user, setUser }) => {
     const [allcrimes, setAllCrimes] = useState(null);
     var locality = "";
     useEffect(() => {
-        
-
-            const config = { headers: { "Content-Type": "application/json" } };
+           const config = { headers: { "Content-Type": "application/json" } };
             Api.post("/crime/listcrimes", {}, config)
                 .then((response) => {
                     console.log("Crime Data", response);

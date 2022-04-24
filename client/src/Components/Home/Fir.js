@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import API from "../../utils/Api.js";
-import Popup from "react-animated-popup";
+import swal from 'sweetalert'
 import "../../Styles/Signup.css";
 const Fir = ({user}) => {
   const crime_type = useRef(undefined);
@@ -19,10 +19,10 @@ const Fir = ({user}) => {
       .then((response) => {
         
         console.log("crime Added ", response);
-    
+        swal("Whoo!", "Your FIR noted down", "success");
       })
       .catch(() => {
-        //swal("Sorry!", "Something went wrong from our side", "error");
+        swal("Sorry!", "Something went wrong from our side", "error");
         console.log("error");
       });
   };

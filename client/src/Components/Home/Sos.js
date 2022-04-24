@@ -1,5 +1,4 @@
-import { useRef } from "react";
-// import { response } from "../../../../api/app";
+
 import API from "../../utils/Api";
 
 const Sos = ({ user }) => {
