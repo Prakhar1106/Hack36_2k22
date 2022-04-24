@@ -22,7 +22,7 @@ const App = () => {
   return (
     <div>
       {(user !== null) ? ((status) ? <HomeAdmin user={user} setUser={setUser}/> :
-        <Home user={user}/>):
+        <Home user={user} setUser={setUser}/>):
       (<div>
           <Header setUser={setUser} setVisible={setVisible} setAdmin={setAdmin} setStatus={setStatus}/> 
           <Signup visible={visible} setVisible={setVisible}/>

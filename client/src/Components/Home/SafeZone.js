@@ -119,7 +119,7 @@ const SafeZone = ({user}) => {
                 <button class="btn-refresh"
                 onClick = {getLocation}>
                 Click me</button>
-                
+            
             </div>
     
     </div>

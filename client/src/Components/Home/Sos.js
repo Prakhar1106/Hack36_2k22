@@ -1,5 +1,4 @@
-import { useRef } from "react";
-// import { response } from "../../../../api/app";
+
 import API from "../../utils/Api";
 
 const Sos = ({ user }) => {
@@ -21,10 +20,11 @@ const Sos = ({ user }) => {
     <>
       <div
         style={{
-          // backgroundColor: "#5995fd",
+          backgroundColor: "#FF0000",
           // fontWeight: "700",
-          // color: "white",
-        
+          color: "white",
+          padding: '5px 10px',
+          margin: '5px'
         }}
         // class="btn solid"
         onClick={(e) => sendData(e)}
