@@ -1,4 +1,4 @@
-<h1 align="center">Hack36 Project:Safe Heaven</h1>
+<h1 align="center">Hack36 Project:Safe Haven</h1>
  <h2 align="center">Theme:Tech Against Crime</h2>
 
 
